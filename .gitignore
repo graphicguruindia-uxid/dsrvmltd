@@ -20,7 +20,7 @@ $RECYCLE.BIN/
 # Exclude
 /planofaction
 indexdsrvm.html
-dsrvm-website.html
+#dsrvm-website.html
 # iOS
 
 
