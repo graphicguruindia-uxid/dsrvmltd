@@ -1039,3 +1039,219 @@
   margin-top: 0.75rem;
   font-style: italic;
 }
+
+/* ── AI badge (page hero pill) ──────────────────────────────────────────── */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(124,58,237,.25);
+}
+
+.ai-badge::before { content: '✦'; font-size: 0.65rem; }
+
+.ai-pill {
+  display: inline-block;
+  background: rgba(124,58,237,.08);
+  color: #7C3AED;
+  border: 1px solid rgba(124,58,237,.2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* ── AI Hero page variant ────────────────────────────────────────────────── */
+.page-hero-ai {
+  background: linear-gradient(135deg, #0A1628 0%, #1e1254 100%) !important;
+}
+
+.page-hero-ai .section-tag { color: #A78BFA !important; }
+.page-hero-ai h1 { color: #fff; }
+.page-hero-ai p  { color: #94A3B8; }
+
+/* ── AI glow card ────────────────────────────────────────────────────────── */
+.card-ai-glow {
+  border: 1px solid rgba(124,58,237,.2) !important;
+  box-shadow: 0 0 0 0 rgba(124,58,237,.15), var(--shadow-md);
+  transition: box-shadow 0.4s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-ai-glow:hover {
+  box-shadow: 0 0 28px 4px rgba(124,58,237,.18), var(--shadow-xl);
+  border-color: rgba(124,58,237,.45) !important;
+}
+
+/* ── Services CTA wrap ───────────────────────────────────────────────────── */
+.services-cta-wrap {
+  padding: 2rem 2rem 5rem;
+}
+
+.services-cta {
+  background: linear-gradient(135deg, #0A1628, #1A2B47);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(124,58,237,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.services-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.services-cta p {
+  color: var(--color-slate-light);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+/* ── Pricing page layout ─────────────────────────────────────────────────── */
+.pricing-hero {
+  margin-top: var(--nav-height);
+  background: linear-gradient(135deg, #0A1628 0%, #1e1254 60%, #0A1628 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(124,58,237,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pricing-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-hero h1 {
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.pricing-hero p {
+  font-size: 1.1rem;
+  color: #94A3B8;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.pricing-section {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.pricing-section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+  margin-top: 3.5rem;
+}
+
+.pricing-section-title:first-child { margin-top: 0; }
+
+.pricing-section-desc {
+  color: var(--color-slate);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.pricing-divider {
+  border: none;
+  border-top: 1px solid rgba(10,22,40,.08);
+  margin: 3.5rem 0;
+}
+
+.pricing-card.ai-plan {
+  border-color: #7C3AED !important;
+  box-shadow: 0 20px 40px rgba(124,58,237,.15);
+}
+
+.pricing-card.ai-plan .pricing-badge {
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+}
+
+/* Bottom CTAs for inner pages */
+.cs-bottom-cta,
+.team-bottom-cta {
+  padding: 4rem 2rem 5rem;
+  text-align: center;
+}
+
+.cs-bottom-cta h2,
+.team-bottom-cta h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-bottom-cta p,
+.team-bottom-cta p {
+  color: var(--color-slate);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Calendar option in contact */
+.calendar-option {
+  background: rgba(124,58,237,.05);
+  border: 1px solid rgba(124,58,237,.15);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.calendar-option p {
+  font-size: 0.9rem;
+  color: var(--color-slate);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .pricing-hero h1 { font-size: 2.25rem; }
+  .pricing-section { padding: 3.5rem 1.5rem; }
+  .services-cta { padding: 3rem 1.5rem; }
+}

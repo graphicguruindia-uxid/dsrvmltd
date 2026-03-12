@@ -1,0 +1,331 @@
+/* =============================================================================
+   DSRVM Limited — ai.css
+   AI-specific components, badges, glows, and feature grids
+   Applies to: all pages (loaded after base.css)
+   ============================================================================= */
+
+/* ── AI Color Tokens ────────────────────────────────────────────────────────── */
+:root {
+  --color-ai:          #7C3AED;   /* violet — AI brand accent */
+  --color-ai-light:    #A78BFA;
+  --color-ai-glow:     rgba(124, 58, 237, 0.15);
+  --color-ai-subtle:   rgba(124, 58, 237, 0.06);
+}
+
+/* ── AI Badge ───────────────────────────────────────────────────────────────── */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, var(--color-ai), #5B21B6);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px var(--color-ai-glow);
+}
+
+.ai-badge::before {
+  content: '✦';
+  font-size: 0.65rem;
+}
+
+/* Inline variant — sits next to a heading */
+.ai-badge-inline {
+  vertical-align: middle;
+  margin-left: 0.6rem;
+  font-size: 0.65rem;
+  padding: 0.25rem 0.7rem;
+}
+
+/* ── AI Pill Tag (e.g. in service lists) ────────────────────────────────────── */
+.ai-pill {
+  display: inline-block;
+  background: var(--color-ai-subtle);
+  color: var(--color-ai);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* ── AI Section Banner (page-wide tinted block) ─────────────────────────────── */
+.ai-section-banner {
+  background: linear-gradient(135deg, #0A1628 0%, #1e1254 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem;
+}
+
+.ai-section-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, rgba(124,58,237,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(255,107,53,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ai-section-banner .section-tag  { color: var(--color-ai-light); }
+.ai-section-banner .section-title { color: #fff; }
+.ai-section-banner .section-description { color: var(--color-slate-light); }
+
+/* ── Glowing Card ───────────────────────────────────────────────────────────── */
+.card-ai-glow {
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  box-shadow: 0 0 0 0 var(--color-ai-glow), var(--shadow-md);
+  transition: box-shadow 0.4s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-ai-glow:hover {
+  box-shadow: 0 0 30px 4px var(--color-ai-glow), var(--shadow-xl);
+  border-color: rgba(124, 58, 237, 0.45) !important;
+  transform: translateY(-8px);
+}
+
+/* ── AI Feature List (check-mark bullets) ───────────────────────────────────── */
+.ai-feature-list {
+  list-style: none;
+  margin-top: 1.25rem;
+}
+
+.ai-feature-list li {
+  padding: 0.5rem 0 0.5rem 1.75rem;
+  position: relative;
+  color: var(--color-slate);
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.05);
+}
+
+.ai-feature-list li:last-child { border-bottom: none; }
+
+.ai-feature-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--color-ai);
+  font-size: 0.7rem;
+  top: 0.65rem;
+}
+
+/* ── AI Stats Strip ─────────────────────────────────────────────────────────── */
+.ai-stat {
+  text-align: center;
+}
+
+.ai-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-ai-light), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.ai-stat-label {
+  color: var(--color-slate-light);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+/* ── Pulse dot (live / active indicator) ────────────────────────────────────── */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--color-sage);
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── Hero AI Tagline (sub-pill above h1) ────────────────────────────────────── */
+.hero-ai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: var(--color-ai);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.hero-ai-tag .ai-icon {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--color-ai), #5B21B6);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* ── AI Service Card (used in simplified home services grid) ────────────────── */
+.ai-service-pill {
+  background: var(--color-ai-subtle);
+  color: var(--color-ai);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.4px;
+}
+
+/* ── Powered-by banner strip ─────────────────────────────────────────────────── */
+.powered-strip {
+  background: linear-gradient(90deg, var(--color-navy) 0%, #150d3b 50%, var(--color-navy) 100%);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(124,58,237,.2);
+  border-bottom: 1px solid rgba(124,58,237,.2);
+}
+
+.powered-strip p {
+  color: var(--color-slate-light);
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+}
+
+.powered-strip strong {
+  color: var(--color-ai-light);
+}
+
+/* ── AI Page Hero variant ───────────────────────────────────────────────────── */
+.page-hero-ai {
+  background: linear-gradient(135deg, #0A1628 0%, #1e1254 100%);
+}
+
+.page-hero-ai .section-tag  { color: var(--color-ai-light); }
+.page-hero-ai h1            { color: #fff; }
+.page-hero-ai p             { color: var(--color-slate-light); }
+
+/* ── Pricing page ───────────────────────────────────────────────────────────── */
+.pricing-hero {
+  margin-top: var(--nav-height);
+  background: linear-gradient(135deg, #0A1628 0%, #1e1254 60%, #0A1628 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(124,58,237,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pricing-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-hero h1 {
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.pricing-hero p {
+  font-size: 1.1rem;
+  color: var(--color-slate-light);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.pricing-toggle-wrap {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-slate-light);
+}
+
+.pricing-section {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.pricing-section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+  margin-top: 3.5rem;
+}
+
+.pricing-section-title:first-child { margin-top: 0; }
+
+.pricing-section-desc {
+  color: var(--color-slate);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.pricing-divider {
+  border: none;
+  border-top: 1px solid rgba(10,22,40,.08);
+  margin: 3.5rem 0;
+}
+
+/* AI pricing card highlight */
+.pricing-card.ai-plan {
+  border-color: var(--color-ai) !important;
+  box-shadow: 0 20px 40px var(--color-ai-glow);
+}
+
+.pricing-card.ai-plan .pricing-badge {
+  background: linear-gradient(135deg, var(--color-ai), #5B21B6);
+}
+
+/* ── Responsive AI ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pricing-hero h1 { font-size: 2.25rem; }
+  .ai-section-banner { padding: 3.5rem 1.5rem; }
+}

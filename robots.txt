@@ -1,7 +1,6 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
 Allow: /
+
+Disallow: /cdn-cgi/
 
 Sitemap: https://www.dsrvmltd.co.uk/sitemap.xml

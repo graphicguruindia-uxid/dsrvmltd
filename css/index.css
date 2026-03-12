@@ -233,6 +233,7 @@
 .service-card:nth-child(1)::before { background: linear-gradient(90deg, var(--color-accent), var(--color-sage)); }
 .service-card:nth-child(2)::before { background: linear-gradient(90deg, var(--color-sage), var(--color-sage-light)); }
 .service-card:nth-child(3)::before { background: linear-gradient(90deg, var(--color-indigo), var(--color-indigo-light)); }
+.service-card:nth-child(4)::before { background: linear-gradient(90deg, var(--color-accent), var(--color-sage)); }
 
 .service-card:hover {
   transform: translateY(-8px);
@@ -252,6 +253,7 @@
   justify-content: center;
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
+color:#fff;
 }
 
 .service-card h3 {
@@ -343,7 +345,7 @@
 }
 
 .timeline-muted {
-  opacity: 0.85;
+  opacity: 1;
   font-style: italic;
   font-size: 0.9rem;
 }
@@ -501,4 +503,316 @@
   .pricing-card.featured {
     transform: scale(1);
   }
+}
+
+/* ── AI hero tag (pill above h1) ─────────────────────────────────────────── */
+.hero-ai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #7C3AED;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.hero-ai-tag .ai-icon {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* ── Powered-by strip ────────────────────────────────────────────────────── */
+.powered-strip {
+  background: linear-gradient(90deg, #0A1628 0%, #150d3b 50%, #0A1628 100%);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(124, 58, 237, 0.2);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.powered-strip p {
+  color: #94A3B8;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.powered-strip strong {
+  color: #A78BFA;
+}
+
+/* ── Simplified Home Services Grid ──────────────────────────────────────── */
+.home-services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.home-services-grid .service-card {
+  border: 1px solid rgba(10, 22, 40, 0.07);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-services-grid .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* first card — AI accent border */
+.home-services-grid .service-card:first-child {
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* ── About section ───────────────────────────────────────────────────────── */
+.about-text {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: var(--color-slate);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ── CTA band ────────────────────────────────────────────────────────────── */
+.cta-band {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1A2B47 100%);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  text-align: center;
+  margin: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(124,58,237,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-band h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.cta-band p {
+  color: var(--color-slate-light);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .cta-band { padding: 3rem 1.5rem; margin: 0 1rem; }
+  .cta-band h2 { font-size: 1.75rem; }
+  .home-services-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   How We Work — Bootstrap compact step cards
+══════════════════════════════════════════════════════════════════════════ */
+
+.process-section-wrap {
+  background: rgba(10, 22, 40, 0.02);
+  padding: 0;
+}
+
+.process-cards-row {
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+/* Individual step card */
+.process-step-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(10, 22, 40, 0.07);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.process-step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(10, 22, 40, 0.14);
+}
+
+/* Subtle tinted stripe on top */
+.process-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bs-top-color, #7C3AED), transparent);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* Icon circle */
+.process-step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.process-step-icon i {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+/* Step number badge */
+.process-step-num {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--color-slate-light);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.process-step-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+.process-step-desc {
+  font-size: 0.875rem;
+  color: var(--color-slate);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Timeline phase badge */
+.process-step-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-slate-light);
+  background: rgba(10, 22, 40, 0.04);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.process-step-meta i {
+  font-size: 0.7rem;
+}
+
+/* Checklist inside card */
+.process-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.process-step-list li {
+  font-size: 0.82rem;
+  color: var(--color-slate);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.process-step-list li:last-child {
+  border-bottom: none;
+}
+
+.process-step-list li i {
+  color: var(--color-sage);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* Desktop connector row (dots + lines between cards) */
+.process-connector-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 10% 0;
+  gap: 0;
+  pointer-events: none;
+}
+
+.process-connector-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(255,255,255,1), 0 0 0 6px currentColor;
+}
+
+.process-connector-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(10,22,40,.12), rgba(10,22,40,.06));
+  margin: 0 4px;
+}
+
+/* Responsive stacking */
+@media (max-width: 991px) {
+  .process-cards-row .animate-on-scroll { animation-delay: 0ms !important; }
+}
+
+@media (max-width: 767px) {
+  .process-step-card { padding: 1.4rem 1.25rem; }
+  .process-step-title { font-size: 1rem; }
 }
