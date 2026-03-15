@@ -502,6 +502,7 @@ footer {
 
 .footer-links {
   list-style: none;
+padding:0;
 }
 
 .footer-links li {
