@@ -597,6 +597,17 @@ color:#fff;
   font-size: 0.875rem;
   line-height: 1.65;
 }
+.team-avatar-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 3px solid rgba(255,255,255,0.6);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
 
 .team-bottom-cta {
   padding: 4rem 2rem;
