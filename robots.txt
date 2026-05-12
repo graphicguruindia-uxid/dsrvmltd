@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-
-Disallow: /cdn-cgi/
-
+Disallow: /js/
+Disallow: /css/
 Sitemap: https://www.dsrvmltd.co.uk/sitemap.xml
