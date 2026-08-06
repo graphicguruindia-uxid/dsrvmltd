@@ -2,7 +2,7 @@
   "name": "dsrvmltd-site",
   "version": "1.0.0",
   "private": true,
-  "description": "DSRVM Limited marketing site (static, Vercel)",
+  "description": "DSRVM Limited marketing site (static, Cloudflare Pages)",
   "scripts": {
     "check": "node scripts/check-site.mjs",
     "test": "node scripts/check-site.mjs"

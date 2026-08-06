@@ -1,30 +1,35 @@
 # DSRVM Ltd site — Deployment (dsrvmltd.co.uk)
 
-Static marketing site. Deploy target: **Vercel** (per the CEO stack decision on DSRA-4 —
-Vercel for the web/marketing frontend, Fly.io for services/Postgres).
+Static marketing site. Deploy target: **Cloudflare Pages** (per the board infra decision
+on DSRA-4 — Cloudflare Pages for the marketing/web frontend; supersedes the earlier Vercel
+call. See monorepo ADR-004).
 
 ## How it deploys
 
-Vercel serves the static files in this repo directly — there is no build step and no
-framework. The `vercel.json` config in the repo root applies security headers and
-long-lived image caching. Internal links use `.html` paths, so `cleanUrls` stays off
-(no redirect churn).
+Cloudflare Pages serves the static files in this repo directly — there is no build step and
+no framework. The `wrangler.toml` in the repo root configures the Pages project
+(`pages_build_output_dir = "."`). Security headers and long-lived image caching are handled
+by the `_headers` file in the repo root (Cloudflare Pages native format, same policy that
+previously lived in `vercel.json`). Internal links use `.html` paths, so no clean-URL
+rewrites are needed.
 
 Two supported paths:
 
-1. **Vercel dashboard** (recommended): import this repo (`graphicguruindia-uxid/dsrvmltd`)
-   → Framework Preset: *Other* → Root Directory: `/` → Deploy. Then add the domain
-   `www.dsrvmltd.co.uk` (and apex `dsrvmltd.co.uk`) in Project → Domains. Vercel issues
-   the TLS cert automatically and sets the CNAME at the DNS provider.
-2. **Vercel CLI**: `npx vercel --prod` after linking the project (`npx vercel link`).
+1. **CI (recommended)**: `.github/workflows/deploy-site.yml` deploys on push to `main`
+   via `cloudflare/wrangler-action` (`wrangler pages deploy . --project-name dsrvm-site`).
+   It skips cleanly until the repo secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+   exist (provisioned via the DSRA-4 credential prompt).
+2. **Wrangler CLI**: `npx wrangler pages deploy . --project-name dsrvm-site --branch main`
+   after `npx wrangler login`.
 
 ## DNS notes
 
-- Current DNS registrar/host holds the domain record. For Vercel: set a `CNAME` record
-  `www → cname.vercel-dns.com` and either a root redirect record or A records for the apex
-  (see Vercel's add-domain wizard for exact values).
-- The repo's `CNAME` file (containing `dsrvmltd.co.uk`) is retained for GitHub Pages
-  compatibility and as documentation of the canonical host; Vercel ignores it.
+- Domain: `dsrvmltd.co.uk` (canonical host in the repo `CNAME` file, which also serves as
+  documentation of the canonical host; Cloudflare Pages ignores it).
+- On a Cloudflare-hosted DNS zone, add a `CNAME` record `www` → `dsrvm-site.pages.dev` (or
+  use a custom domain `dsrvmltd.co.uk` in the Pages project — Cloudflare handles the cert).
+- If DNS is with another registrar, point the CNAME at `dsrvm-site.pages.dev` and set apex
+  redirection in the Pages project settings.
 
 ## SEO / verification files (kept working)
 
@@ -41,11 +46,11 @@ Two supported paths:
    recipient (set in the EmailJS dashboard, not in code) should be
    `info@dsrvmltd.co.uk` (the setup notes in `js/contact.js` now instruct this) so
    enquiries land in the DSRVM inbox — confirm the live template's `To Email` field.
-4. **Deploy credentials**: DSRA-4 tracks the hosting/DNS credentials; go-live of the new
-   deploy pipeline waits on that.
+4. **Deploy credentials**: DSRA-4 / DSRA-17 track the Cloudflare credential prompt;
+   go-live of the deploy pipeline waits on that.
 
 ## CI
 
-Add a GitHub Action later if a build/test gate is wanted: run `npm test`
-(`node scripts/check-site.mjs`) on PRs — it validates links, sitemap, JSON-LD, and the
-CNAME file. No build is required for a static deploy.
+`.github/workflows/check-site.yml` runs `npm test` (`node scripts/check-site.mjs`) on PRs
+and main — it validates links, sitemap, JSON-LD, and the CNAME file. No build is required
+for a static deploy.

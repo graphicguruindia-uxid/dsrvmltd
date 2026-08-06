@@ -12,6 +12,7 @@
  *   - every local href/src in every page resolves to an existing file
  *   - every inline JSON-LD block parses as JSON
  *   - the HR Automation / CareerForge offer is present on the site
+ *   - Cloudflare Pages deploy files present (_headers, wrangler.toml)
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -125,7 +126,7 @@ check('HR Automation / CareerForge offer is present', () => {
 
 // 8. expected files present
 check('expected deploy files present', () => {
-  for (const f of ['robots.txt', 'sitemap.xml', 'CNAME', 'BingSiteAuth.xml', 'vercel.json']) {
+  for (const f of ['robots.txt', 'sitemap.xml', 'CNAME', 'BingSiteAuth.xml', '_headers', 'wrangler.toml']) {
     assert.ok(existsSync(join(ROOT, f)), `missing ${f}`);
   }
 });
