@@ -164,10 +164,10 @@
         keywords: ["AI strategy UK", "AI consulting", "LLM integration", "digital transformation roadmap"]
       },
       {
-        name: "Intelligent HR Automation",
-        desc: "AI-powered HR automation including HRIS implementation (Workday, SAP, Oracle), intelligent candidate screening, onboarding automation, and GDPR-compliant payroll management.",
+        name: "HR Automation & CareerForge AI",
+        desc: "AI-powered HR automation with CareerForge, DSRVM's candidate-facing career assistant — resume parsing, UK role gap analysis, ATS compliance and CV, cover letter and LinkedIn generation — plus employer-side candidate intake and AI screening with human review.",
         url: "/services.html#hr-automation",
-        keywords: ["HR automation AI", "Workday implementation UK", "SAP SuccessFactors", "AI candidate screening"]
+        keywords: ["HR automation AI", "CareerForge career assistant", "resume parsing UK", "AI candidate screening", "ATS compliance"]
       },
       {
         name: "Web Services & Digital Solutions",

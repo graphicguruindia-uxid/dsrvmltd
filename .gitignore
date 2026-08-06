@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 
 # Exclude
 /planofaction
+node_modules/
 indexdsrvm.html
 index0.html
 indexbkp.html
