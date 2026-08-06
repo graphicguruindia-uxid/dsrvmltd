@@ -38,9 +38,9 @@ Two supported paths:
 1. Confirm `https://www.dsrvmltd.co.uk/robots.txt` and `/sitemap.xml` return 200.
 2. Submit the sitemap to Google Search Console and Bing Webmaster Tools.
 3. **Contact form recipient**: `js/contact.js` uses EmailJS. The EmailJS *template*
-   recipient (set in the EmailJS dashboard, not in code) currently points at
-   `info@graphicguru.in` per the setup notes — confirm it is updated to
-   `info@dsrvmltd.co.uk` so enquiries land in the DSRVM inbox.
+   recipient (set in the EmailJS dashboard, not in code) should be
+   `info@dsrvmltd.co.uk` (the setup notes in `js/contact.js` now instruct this) so
+   enquiries land in the DSRVM inbox — confirm the live template's `To Email` field.
 4. **Deploy credentials**: DSRA-4 tracks the hosting/DNS credentials; go-live of the new
    deploy pipeline waits on that.
 

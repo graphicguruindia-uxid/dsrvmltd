@@ -20,7 +20,7 @@
  *    Name it "dsrvm_contact"
  *
  *    ⚠️  CRITICAL — In the template Settings panel set these three fields:
- *        To Email  →  info@graphicguru.in        ← TYPE THIS DIRECTLY, do not use {{to_email}}
+ *        To Email  →  info@dsrvmltd.co.uk       ← TYPE THIS DIRECTLY, do not use {{to_email}}
  *        Reply To  →  {{reply_to}}
  *        Subject   →  New Enquiry — {{sender_name}} ({{service}})
  *
