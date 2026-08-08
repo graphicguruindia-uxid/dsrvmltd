@@ -131,6 +131,7 @@
   /* ── BreadcrumbList (inner pages) ───────────────────────────────────── */
   var breadcrumbs = {
     'services.html':       [['Home', '/'], ['Services', '/services.html']],
+    'careerforge-ai.html': [['Home', '/'], ['Services', '/services.html'], ['CareerForge AI', '/careerforge-ai.html']],
     'pricing.html':        [['Home', '/'], ['Pricing',  '/pricing.html']],
     'case-studies.html':   [['Home', '/'], ['Case Studies', '/case-studies.html']],
     'team.html':           [['Home', '/'], ['Team', '/team.html']],
@@ -202,6 +203,36 @@
         "serviceType": "IT Consulting",
         "keywords": svc.keywords.join(', ')
       });
+    });
+  }
+
+  /* ── CareerForge AI page: SoftwareApplication schema ───────────────── */
+  if (page === 'careerforge-ai.html') {
+    injectSchema({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CareerForge AI",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "DSRVM's candidate-facing AI career assistant: resume parsing, UK role gap analysis, ATS compliance, and CV, cover letter and LinkedIn generation against 15 UK role benchmarks — offline by default and privacy-first.",
+      "provider": {
+        "@type": "Organization",
+        "name": "DSRVM Limited",
+        "url": BASE_URL
+      },
+      "url": BASE_URL + "/careerforge-ai.html",
+      "featureList": [
+        "Resume parsing",
+        "UK role gap analysis",
+        "ATS compliance checking",
+        "CV generation",
+        "Cover letter generation",
+        "LinkedIn profile drafting",
+        "Boolean job-search strings",
+        "Job matching against 15 UK role benchmarks",
+        "Privacy-first, offline by default",
+        "Pluggable AI gateway"
+      ]
     });
   }
 

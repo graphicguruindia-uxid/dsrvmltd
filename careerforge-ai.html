@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CareerForge AI | DSRVM's AI Career Assistant — Resume Parsing, UK Role Gap Analysis & ATS Compliance</title>
+  <meta name="description" content="CareerForge AI is DSRVM's candidate-facing AI career assistant: resume parsing, UK role gap analysis, ATS compliance, and CV, cover letter and LinkedIn generation against 15 UK role benchmarks — offline by default and privacy-first.">
+  <meta name="keywords" content="CareerForge AI, AI career assistant UK, resume parser AI, UK role gap analysis, ATS compliance check, CV generator AI, cover letter AI, LinkedIn headline generator, career automation, DSRVM HR automation">
+  <meta name="author" content="DSRVM Limited">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.dsrvmltd.co.uk/careerforge-ai.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DSRVM Limited">
+  <meta property="og:title" content="CareerForge AI | DSRVM's AI Career Assistant">
+  <meta property="og:description" content="Parse a resume, run a UK role gap analysis, check ATS compliance, and generate CV, cover letter and LinkedIn drafts against UK role benchmarks — offline by default.">
+  <meta property="og:url" content="https://www.dsrvmltd.co.uk/careerforge-ai.html">
+  <meta property="og:image" content="https://www.dsrvmltd.co.uk/images/dsrvmltd-hero.png">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CareerForge AI | DSRVM's AI Career Assistant">
+  <meta name="twitter:description" content="Resume parsing, UK role gap analysis, ATS compliance and CV, cover letter and LinkedIn generation — offline by default.">
+  <meta name="twitter:image" content="https://www.dsrvmltd.co.uk/images/dsrvmltd-hero.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"CareerForge AI",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "description":"DSRVM's candidate-facing AI career assistant: resume parsing, UK role gap analysis, ATS compliance, and CV, cover letter and LinkedIn generation against 15 UK role benchmarks — offline by default and privacy-first.",
+    "provider":{"@type":"Organization","name":"DSRVM Limited","url":"https://www.dsrvmltd.co.uk"},
+    "url":"https://www.dsrvmltd.co.uk/careerforge-ai.html",
+    "featureList":[
+      "Resume parsing",
+      "UK role gap analysis",
+      "ATS compliance checking",
+      "CV generation",
+      "Cover letter generation",
+      "LinkedIn profile drafting",
+      "Boolean job-search strings",
+      "Job matching against 15 UK role benchmarks",
+      "Privacy-first, offline by default",
+      "Pluggable AI gateway"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.dsrvmltd.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://www.dsrvmltd.co.uk/services.html"},
+      {"@type":"ListItem","position":3,"name":"CareerForge AI","item":"https://www.dsrvmltd.co.uk/careerforge-ai.html"}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/ai.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .services-cta-wrap{padding:4rem 1.5rem;}
+    .services-cta{background:linear-gradient(135deg,#0D1B2A,#1A3A5C);border-radius:14px;padding:3rem;text-align:center;color:white;}
+    .services-cta h2{color:white;margin-bottom:1rem;}
+    .services-cta p{color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 1.5rem;line-height:1.7;}
+    .cta-pair{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:white!important;padding:.85rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:all .2s;}
+    .btn-outline-white:hover{background:rgba(255,255,255,.1);}
+    .platform-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0;}
+    .platform-chip{background:#F4F7FB;border:1px solid #D0DCE8;border-radius:6px;padding:.3rem .75rem;font-size:.8rem;font-weight:600;color:#2E3A4A;}
+    .service-anchor-nav{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;top:4rem;align-items:center;left:0;}
+    .service-anchor-nav a{padding:.4rem 1rem;border:1px solid #D0DCE8;border-radius:20px;font-size:.82rem;font-weight:500;color:#2E3A4A;text-decoration:none;transition:all .15s;}
+    .service-anchor-nav a:hover{background:#0D9488;color:white;border-color:#0D9488;}
+    .step-num{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--color-accent);line-height:1;}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="/images/dsrvmltd-logo.png" alt="DSRVM Limited" width="120" height="auto"/>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="services.html" aria-haspopup="true" aria-expanded="false">Services <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+        <ul class="dropdown-menu-nav">
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="careerforge-ai.html">CareerForge AI</a></li>
+        </ul>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#process">How We Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="cta-button">Book Advisory Call</a>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <p>We use cookies to improve your experience and analyse site traffic. By clicking <strong>Accept All</strong>, you consent to our use of analytics cookies. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
+    <button class="cookie-decline" onclick="declineCookies()">Necessary Only</button>
+  </div>
+</div>
+
+<div class="page-hero page-hero-ai">
+  <div class="page-hero-content">
+    <span class="ai-badge" style="margin-bottom:1rem">CareerForge AI — by DSRVM Limited</span>
+    <h1>Your Career,<br>Decoded in Minutes.</h1>
+    <p>CareerForge AI turns a single resume into a complete career picture: UK role gap analysis, ATS compliance, job-match scores against 15 UK role benchmarks, and ready-to-use CV, cover letter and LinkedIn drafts. Privacy-first by design, and it works offline by default.</p>
+    <nav class="service-anchor-nav" aria-label="Jump to section">
+      <a href="#what-is">What is CareerForge?</a>
+      <a href="#features">Capabilities</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#privacy">Privacy &amp; AI</a>
+      <a href="#employers">For Employers</a>
+    </nav>
+  </div>
+</div>
+
+<div class="services-detail">
+
+  <!-- ── What is CareerForge ──────────────────────────────────────────── -->
+  <div class="service-section animate-on-scroll" id="what-is">
+    <div class="service-text">
+      <div class="service-badge" style="background:rgba(13,148,136,.1);color:#0D9488">🤝 What is CareerForge AI?</div>
+      <h2>Candidate-Facing Career Intelligence,<br>Not Another Job Board.</h2>
+      <p>Job searches fail on silence: you send a resume and never learn what was wrong with it. CareerForge AI breaks that silence. It parses your resume, benchmarks it against UK role expectations, shows exactly which skills are missing, and drafts the documents you need — tailored, ATS-safe, and ready to send.</p>
+      <p>It is DSRVM's candidate-facing product line. The employer side — candidate intake, AI screening, and human review with a full audit trail — runs on our HR automation pipeline. CareerForge is the candidate's window into that same intelligent workflow.</p>
+      <div class="platform-chips">
+        <span class="platform-chip">UK Role Benchmarks</span>
+        <span class="platform-chip">ATS Compliance</span>
+        <span class="platform-chip">Offline by Default</span>
+        <span class="platform-chip">Privacy-First</span>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="cta-button" style="background:linear-gradient(135deg,#0D9488,#0F766E)">Request a CareerForge Demo</a>
+      </div>
+    </div>
+    <div class="service-detail-card animate-on-scroll card-ai-glow">
+      <h3>CareerForge at a Glance</h3>
+      <div class="feature-grid">
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Resume Parsing</h4>
+          <p>Extracts skills, experience, education and PII from PDF, DOCX, DOC, RTF and TXT — clean and structured.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>UK Role Gap Analysis</h4>
+          <p>Benchmarks your profile against 15 UK role benchmarks and scores your fit against the target role.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>ATS Compliance Check</h4>
+          <p>Verifies your resume parses cleanly through applicant tracking systems — the ones that quietly filter candidates out.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Document Generation</h4>
+          <p>CV, cover letter and LinkedIn drafts generated against the target role's benchmark — consistent and ready to customise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Capabilities ─────────────────────────────────────────────────── -->
+  <div class="service-section reverse animate-on-scroll" id="features">
+    <div class="service-text">
+      <div class="service-badge" style="background:rgba(13,148,136,.1);color:#0D9488">⚙️ Capabilities</div>
+      <h2>One Engine.<br>Ten Career Moves.</h2>
+      <p>The CareerForge engine — DSRVM's seven-module framework — runs a deterministic, fully offline pipeline. That means the core analysis never depends on a cloud service, a network connection, or a third-party API. Speed and privacy come built-in; AI is an optional enhancement layer, not a dependency.</p>
+      <div class="tech-tags">
+        <span class="tech-tag" style="background:#0D9488">Resume Parsing</span>
+        <span class="tech-tag">Gap Analysis</span>
+        <span class="tech-tag">ATS Compliance</span>
+        <span class="tech-tag">CV Generation</span>
+        <span class="tech-tag">Cover Letters</span>
+        <span class="tech-tag">LinkedIn Drafts</span>
+        <span class="tech-tag">Boolean Search Strings</span>
+        <span class="tech-tag">Job Matching</span>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="cta-button" style="background:linear-gradient(135deg,#0D9488,#0F766E)">Ask How CareerForge Fits Your Team</a>
+      </div>
+    </div>
+    <div class="service-detail-card animate-on-scroll card-ai-glow">
+      <h3>CareerForge Capabilities</h3>
+      <div class="feature-grid">
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>CV Generation</h4>
+          <p>Tailored CV drafts aligned to the target role benchmark — skills prioritised by what the UK market actually asks for.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Cover Letter Generation</h4>
+          <p>Cover letters that connect your evidence to the role's requirements — no generic paragraphs that recruiters skim past.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>LinkedIn Profile Drafts</h4>
+          <p>Headline, summary and experience sections drafted to surface the right keywords to UK recruiters.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Boolean Job-Search Strings</h4>
+          <p>Copy-paste boolean queries that find the right roles on job boards — no more sifting through irrelevant results.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Candidate Score</h4>
+          <p>A single 0–100 score blending gap analysis, ATS compliance and top job match — the number a screening team can consume.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Job Matching</h4>
+          <p>Your profile matched against 15 UK role benchmarks to show which roles you are best positioned for next.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── How It Works ─────────────────────────────────────────────────── -->
+  <div class="service-section animate-on-scroll" id="how-it-works">
+    <div class="service-text">
+      <div class="service-badge" style="background:rgba(13,148,136,.1);color:#0D9488">🚀 How It Works</div>
+      <h2>Three Steps.<br>From Resume to Ready.</h2>
+      <p>No account gymnastics, no waiting on a queue. Upload a resume, get a decision-grade analysis, and walk away with documents you can actually send.</p>
+    </div>
+    <div class="service-detail-card animate-on-scroll card-ai-glow">
+      <h3>The CareerForge Flow</h3>
+      <div class="feature-grid">
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4><span class="step-num">1</span> Upload Your Resume</h4>
+          <p>PDF, DOCX, DOC, RTF or TXT. Parsed into structured data — with personal information flagged and protected at the point of extraction.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4><span class="step-num">2</span> Get Your Analysis</h4>
+          <p>UK role gap analysis, ATS compliance, candidate score and matched roles — generated locally, offline, in seconds.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4><span class="step-num">3</span> Generate &amp; Send</h4>
+          <p>CV, cover letter, LinkedIn drafts and boolean search strings — tailored to the target role and ready to customise and submit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Privacy & AI ─────────────────────────────────────────────────── -->
+  <div class="service-section reverse animate-on-scroll" id="privacy">
+    <div class="service-text">
+      <div class="service-badge" style="background:rgba(13,148,136,.1);color:#0D9488">🔒 Privacy &amp; AI</div>
+      <h2>Private by Default.<br>AI as an Option, Not a Dependency.</h2>
+      <p>CareerForge processes candidate data with a private-by-design engine. It runs fully offline by default — the resume never has to leave the device. When AI assistance is switched on, it plugs into a provider-agnostic gateway: your choice of local or hosted LLM, with no vendor lock-in and graceful degradation if the provider is unreachable.</p>
+      <div class="tech-tags">
+        <span class="tech-tag" style="background:#0D9488">GDPR-Aware</span>
+        <span class="tech-tag">PII Flagging</span>
+        <span class="tech-tag">Offline-First</span>
+        <span class="tech-tag">Ollama Ready</span>
+        <span class="tech-tag">OpenAI-Compatible</span>
+        <span class="tech-tag">UK Employment Law</span>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="privacy-policy.html" class="cta-button" style="background:linear-gradient(135deg,#0D9488,#0F766E)">Read Our Privacy Policy</a>
+      </div>
+    </div>
+    <div class="service-detail-card animate-on-scroll card-ai-glow">
+      <h3>Privacy &amp; AI Governance</h3>
+      <div class="feature-grid">
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Offline by Default</h4>
+          <p>Core analysis runs locally — no network call, no third-party processing of candidate data unless you explicitly enable AI.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>PII Flagged at Source</h4>
+          <p>Email, phone, National Insurance and postcode patterns are flagged during extraction so personal data never leaks downstream.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Pluggable AI Gateway</h4>
+          <p>Local or hosted LLM via an OpenAI-compatible interface — Ollama for zero-cost local inference, or your existing provider.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Graceful Degradation</h4>
+          <p>If the AI provider is unavailable, CareerForge keeps working on its deterministic engine — the app never bricks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── For Employers ────────────────────────────────────────────────── -->
+  <div class="service-section animate-on-scroll" id="employers">
+    <div class="service-text">
+      <div class="service-badge" style="background:rgba(13,148,136,.1);color:#0D9488">🏢 For Employers</div>
+      <h2>The Same Intelligence,<br>On the Employer Side.</h2>
+      <p>CareerForge is the candidate-facing half of DSRVM's HR automation line. On the employer side, the same seam feeds candidate intake through AI screening to human review — with every decision recorded in an audit trail.</p>
+      <div class="platform-chips">
+        <span class="platform-chip">Candidate Intake</span>
+        <span class="platform-chip">AI Screening</span>
+        <span class="platform-chip">Human Review</span>
+        <span class="platform-chip">Audit Trail</span>
+        <span class="platform-chip">GDPR Compliance</span>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="services.html#hr-automation" class="cta-button" style="background:linear-gradient(135deg,#0D9488,#0F766E)">Explore HR Automation Services</a>
+      </div>
+    </div>
+    <div class="service-detail-card animate-on-scroll card-ai-glow">
+      <h3>Employer-Side Capabilities</h3>
+      <div class="feature-grid">
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Candidate Intake</h4>
+          <p>Resumes, emails and spreadsheets normalised into a single structured pipeline — no more manual re-keying.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>AI Screening with Human Review</h4>
+          <p>AI shortlists and scores candidates; a human always makes the call — recommendations, not decisions.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#0D9488;background:rgba(13,148,136,.04)">
+          <h4>Compliance &amp; Audit Trail</h4>
+          <p>UK employment law and GDPR-aware processing, with consent tracked and every screening decision recorded.</p>
+        </div>
+        <div class="feature-item" style="border-left-color:#14B8A6;background:rgba(13,148,136,.04)">
+          <h4>Managed Service</h4>
+          <p>Deployed, configured and maintained as a managed service — from candidate tooling to full employer-side automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="services-cta-wrap">
+  <div class="services-cta">
+    <h2>Ready to See CareerForge in Action?</h2>
+    <p>Book a free 30-minute demo. Bring a resume — we will run it through the engine live and show you exactly what a candidate would see.</p>
+    <p style="font-size:.85rem;opacity:.55;margin-bottom:1.5rem;">No pitch. No deck. No obligation.</p>
+    <div class="cta-pair">
+      <a href="contact.html" class="cta-button" style="font-size:1rem;padding:.9rem 2rem;">Book Free Advisory Call</a>
+      <a href="mailto:info@dsrvmltd.co.uk" class="btn-outline-white">📩 info@dsrvmltd.co.uk</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="/images/dsrvmltd-logo-i.png" alt="DSRVM Limited" width="140" height="auto"/>
+      <p>Digital Solutions &amp; Resources Vitality Management — AI digital transformation consulting, CMS migration, UX &amp; UI design, enterprise applications, and AI resource advisory for UK and global businesses.</p>
+      <address class="footer-address" aria-label="Company address">
+        <strong>DSRVM Limited</strong><br/>
+        Southampton, United Kingdom, SO15 3JQ<br/>
+        Registered in England &amp; Wales<br/>
+        Company No: 17018570<br/>
+        <a href="tel:+447780315635">+44 7780 315 635</a><br/>
+        <a href="mailto:info@dsrvmltd.co.uk">info@dsrvmltd.co.uk</a>
+      </address>
+    </div>
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html#ux-ui">UX &amp; UI Design</a></li>
+        <li><a href="services.html#branding">Branding for CMS &amp; Enterprise</a></li>
+        <li><a href="services.html#cms-migration">CMS Migration &amp; ITSM Support</a></li>
+        <li><a href="services.html#enterprise-apps">Enterprise Application Consulting</a></li>
+        <li><a href="services.html#hr-automation">HR Automation &amp; CareerForge AI</a></li>
+        <li><a href="careerforge-ai.html">CareerForge AI</a></li>
+        <li><a href="services.html#ai-advisory">AI Resource &amp; Expertise Advisory</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="team.html">Meet the Team</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="index.html#process">How We Work</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contact &amp; Legal</h4>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="https://www.linkedin.com/company/dsrvm-limited/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 DSRVM Limited. All rights reserved. Registered in England &amp; Wales. Company No: 17018570.</p>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" class="scroll-top-btn" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
+<script src="js/structured-data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmDMFhJPFOso6R5DDyOJJ0S4KUAz" crossorigin="anonymous"></script>
+<script type="text/javascript">var sc_project=13204602;var sc_invisible=1;var sc_security="3e97f699";</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13204602/0/3e97f699/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</body>
+</html>
