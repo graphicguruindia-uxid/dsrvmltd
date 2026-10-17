@@ -4,7 +4,7 @@
  *
  * Fix summary (v3):
  *  - Smooth scroll works for BOTH href="#id" AND href="index.html#id" (cross-page anchor)
- *  - "How We Work" nav link only highlights when #process section is in view (IntersectionObserver)
+ *  - "About" nav link only highlights when the #about section is in view (IntersectionObserver)
  *  - Page-load active state: respects hash in URL; anchor-only links never highlighted on plain page load
  *  - Bootstrap navbar collapse close on link-click (mobile)
  */
@@ -128,12 +128,12 @@
         return;
       }
 
-      // Case B: page + hash  e.g. index.html#process
+      // Case B: page + hash  e.g. index.html#about
       var hashIdx = href.indexOf('#');
       if (hashIdx === -1) return; // no hash — normal link
 
       var filePart = href.slice(0, hashIdx).split('/').pop() || 'index.html';
-      var hashPart = href.slice(hashIdx); // "#process"
+      var hashPart = href.slice(hashIdx); // "#about"
 
       // Only intercept if we're already on that page
       if (filePart === currentFile) {
@@ -160,7 +160,7 @@
           highlight if the filename matches the current page.
        b) Links that are same-page ANCHORS (href="#id" or "thispage.html#id"):
           NEVER highlighted on page load — only when the section is in view.
-       c) "How We Work" (index.html#process) only highlights when #process
+       c) "About" (index.html#about) highlights when the #about section
           is scrolled into view on the homepage.
   ══════════════════════════════════════════════════════════════════════════ */
   var allNavLinks = document.querySelectorAll('.nav-links a');
@@ -192,9 +192,8 @@
   // --- Step B: section-aware active for same-page anchor links ---
   // Map of  section-id  →  nav link href to highlight
   var SECTION_NAV_MAP = {
-    'process'  : 'index.html#process',
     'services' : 'services.html',    // services section on homepage → services page link
-    'about'    : 'index.html',
+    'about'    : 'index.html#about', // about section on homepage → About nav link
   };
 
   // Only run on the page that has these sections

@@ -165,10 +165,10 @@
         keywords: ["AI strategy UK", "AI consulting", "LLM integration", "digital transformation roadmap"]
       },
       {
-        name: "HR Automation & CareerForge AI",
-        desc: "AI-powered HR automation with CareerForge, DSRVM's candidate-facing career assistant — resume parsing, UK role gap analysis, ATS compliance and CV, cover letter and LinkedIn generation — plus employer-side candidate intake and AI screening with human review.",
+        name: "HR Automation",
+        desc: "AI-powered HR automation covering candidate intake, resume parsing and skills-gap analysis, AI screening with human review, and privacy-first GDPR-aware processing with a full audit trail.",
         url: "/services.html#hr-automation",
-        keywords: ["HR automation AI", "CareerForge career assistant", "resume parsing UK", "AI candidate screening", "ATS compliance"]
+        keywords: ["HR automation AI", "resume parsing UK", "AI candidate screening", "human review", "GDPR HR automation"]
       },
       {
         name: "Web Services & Digital Solutions",

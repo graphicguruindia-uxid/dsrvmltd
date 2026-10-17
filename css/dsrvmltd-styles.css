@@ -152,14 +152,6 @@ footer{background:var(--color-navy);color:white;padding:4rem 2rem 2rem;}
 .service-list li::before{content:'✓';position:absolute;left:0;color:var(--color-sage);font-weight:700;}
 .service-link{color:var(--color-accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:var(--transition);}
 .service-link:hover{gap:.7rem;}
-/* ── PROCESS ── */
-.process-timeline{position:relative;padding:2rem 0;}
-.timeline-item{display:grid;grid-template-columns:1fr 80px 1fr;gap:2rem;margin-bottom:3.5rem;align-items:center;}
-.timeline-content{background:white;padding:2rem;border-radius:1rem;border:1px solid rgba(10,22,40,.08);box-shadow:0 4px 12px rgba(10,22,40,.05);}
-.timeline-content h3{font-family:var(--font-display);font-size:1.3rem;color:var(--color-navy);margin-bottom:.75rem;}
-.timeline-content p{color:var(--color-slate);}
-.timeline-marker{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;box-shadow:0 8px 24px rgba(255,107,53,.3);}
-.timeline-item:nth-child(even) .timeline-content:first-child{order:3;}
 /* ── PRICING ── */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
 .pricing-card{background:white;padding:2.5rem;border-radius:1rem;border:2px solid rgba(10,22,40,.08);transition:var(--transition);position:relative;}
@@ -182,7 +174,6 @@ footer{background:var(--color-navy);color:white;padding:4rem 2rem 2rem;}
 .cta-buttons{display:flex;gap:1rem;justify-content:center;position:relative;z-index:1;}
 @media(max-width:1024px){
 .hero-container{grid-template-columns:1fr;}.results-inner{grid-template-columns:repeat(2,1fr);}
-.timeline-item{grid-template-columns:80px 1fr;}.timeline-item .timeline-content:first-child,.timeline-item:nth-child(even) .timeline-content:first-child{order:2;}.timeline-content:last-child{display:none;}
 }
 @media(max-width:768px){
 .hero-content h1{font-size:2.5rem;}.hero-stats{flex-direction:column;gap:1.5rem;}.hero-cta{flex-direction:column;}.results-inner{grid-template-columns:repeat(2,1fr);}.cta-band{margin:0;border-radius:0;}.cta-band h2{font-size:2rem;}.cta-buttons{flex-direction:column;}.pricing-card.featured{transform:scale(1);}

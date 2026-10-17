@@ -11,7 +11,7 @@
  *     to a real element id in that page
  *   - every local href/src in every page resolves to an existing file
  *   - every inline JSON-LD block parses as JSON
- *   - the HR Automation / CareerForge offer is present on the site
+  *   - the HR Automation offer is present on the site
  *   - Cloudflare Pages deploy files present (_headers, wrangler.toml)
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
@@ -114,13 +114,13 @@ check('inline JSON-LD blocks parse', () => {
   }
 });
 
-// 7. HR Automation / CareerForge offer present
-check('HR Automation / CareerForge offer is present', () => {
+// 7. HR Automation offer present
+check('HR Automation offer is present', () => {
   const services = read(join(ROOT, 'services.html'));
   assert.ok(/id="hr-automation"/.test(services), 'services.html missing #hr-automation section');
-  assert.ok(/CareerForge/.test(services), 'services.html missing CareerForge mention');
+  assert.ok(/HR Automation/.test(services), 'services.html missing HR Automation mention');
   const index = read(join(ROOT, 'index.html'));
-  assert.ok(/CareerForge/.test(index), 'index.html missing CareerForge mention');
+  assert.ok(/HR Automation/.test(index), 'index.html missing HR Automation mention');
   assert.ok(sitemapLocs.some((l) => l.includes('#hr-automation')), 'sitemap missing #hr-automation');
 });
 
