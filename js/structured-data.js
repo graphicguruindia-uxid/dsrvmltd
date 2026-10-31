@@ -93,15 +93,39 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "AI Strategy & Consulting",
-            "url": BASE_URL + "/services.html#ai-strategy"
+            "name": "UX & UI Design Consulting",
+            "url": BASE_URL + "/services.html#ux-ui"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Intelligent HR Automation",
+            "name": "Branding for CMS & Enterprise Apps",
+            "url": BASE_URL + "/services.html#branding"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "CMS Migration & ITSM L2/L3 Support",
+            "url": BASE_URL + "/services.html#cms-migration"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enterprise Application Consulting",
+            "url": BASE_URL + "/services.html#enterprise-apps"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "HR Automation",
             "url": BASE_URL + "/services.html#hr-automation"
           }
         },
@@ -109,16 +133,8 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Web Services & Digital Solutions",
-            "url": BASE_URL + "/services.html#web-services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Operational Management & ITSM",
-            "url": BASE_URL + "/services.html#operational"
+            "name": "AI Resource & Expertise Advisory",
+            "url": BASE_URL + "/services.html#ai-advisory"
           }
         }
       ]
@@ -132,7 +148,6 @@
   var breadcrumbs = {
     'services.html':       [['Home', '/'], ['Services', '/services.html']],
     'careerforge-ai.html': [['Home', '/'], ['Services', '/services.html'], ['CareerForge AI', '/careerforge-ai.html']],
-    'pricing.html':        [['Home', '/'], ['Pricing',  '/pricing.html']],
     'case-studies.html':   [['Home', '/'], ['Case Studies', '/case-studies.html']],
     'team.html':           [['Home', '/'], ['Team', '/team.html']],
     'contact.html':        [['Home', '/'], ['Contact', '/contact.html']],
@@ -159,10 +174,28 @@
   if (page === 'services.html') {
     var services = [
       {
-        name: "AI Strategy & Consulting",
-        desc: "Tailored AI and digital roadmap design — identifying automation opportunities, architecting LLM integrations, and delivering clear ROI projections. Quick wins in weeks, long-term transformation over months.",
-        url: "/services.html#ai-strategy",
-        keywords: ["AI strategy UK", "AI consulting", "LLM integration", "digital transformation roadmap"]
+        name: "UX & UI Design Consulting",
+        desc: "User-centred interface design, wireframing, prototyping, design systems and accessibility-first component libraries for CMS and enterprise applications.",
+        url: "/services.html#ux-ui",
+        keywords: ["UX design UK", "UI design consulting", "Figma design system", "WCAG accessibility", "CMS UI"]
+      },
+      {
+        name: "Branding for CMS & Enterprise Apps",
+        desc: "Brand application to AEM, SharePoint, Sitecore and OpenCMS including digital brand guidelines, component-level implementation and design-to-dev handover.",
+        url: "/services.html#branding",
+        keywords: ["branding CMS", "AEM branding", "SharePoint theming", "Sitecore branding", "brand governance"]
+      },
+      {
+        name: "CMS Migration & ITSM L2/L3 Support",
+        desc: "End-to-end CMS migration consulting with embedded ITSM L2/L3 support for AEM, SharePoint, Sitecore and OpenCMS — from planning through post-go-live stabilisation.",
+        url: "/services.html#cms-migration",
+        keywords: ["CMS migration UK", "AEM migration", "SharePoint migration", "Sitecore migration", "ITSM L2 L3"]
+      },
+      {
+        name: "Enterprise Application Consulting",
+        desc: "Requirements definition, technical architecture, agile delivery governance and AI-driven resource management for complex enterprise application builds.",
+        url: "/services.html#enterprise-apps",
+        keywords: ["enterprise app consulting", "agile governance", "Azure DevOps", "AI resource planning"]
       },
       {
         name: "HR Automation",
@@ -171,16 +204,10 @@
         keywords: ["HR automation AI", "resume parsing UK", "AI candidate screening", "human review", "GDPR HR automation"]
       },
       {
-        name: "Web Services & Digital Solutions",
-        desc: "Enterprise CMS (SharePoint, Sitecore, AEM), Azure cloud, React/Angular web apps, AI-enhanced UX, and AI-driven SEO for UK organisations.",
-        url: "/services.html#web-services",
-        keywords: ["SharePoint consulting UK", "Sitecore implementation", "Azure web development", "AI-enhanced CMS"]
-      },
-      {
-        name: "Operational Management & ITSM",
-        desc: "Agile transformation, ITSM/ITIL v4 implementation, ServiceNow, Azure DevOps CI/CD, and AI-driven KPI analytics — delivering 18% sprint velocity improvements.",
-        url: "/services.html#operational",
-        keywords: ["ITSM consulting UK", "Agile transformation", "ServiceNow AI", "DevOps consulting"]
+        name: "AI Resource & Expertise Advisory",
+        desc: "AI readiness assessment, skills gap analysis, expert advisor pairing and flexible engagement models from scoping through to live delivery.",
+        url: "/services.html#ai-advisory",
+        keywords: ["AI readiness", "skills gap analysis", "resource planning", "SaaS transformation", "AI advisory"]
       }
     ];
 
@@ -232,56 +259,6 @@
         "Job matching against 15 UK role benchmarks",
         "Privacy-first, offline by default",
         "Pluggable AI gateway"
-      ]
-    });
-  }
-
-  /* ── Pricing page: FAQ schema ───────────────────────────────────────── */
-  if (page === 'pricing.html') {
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer fixed-price AI consulting projects?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Project-based engagements are quoted as fixed-price after a free scoping session. We don't charge for discovery — the first conversation is always free."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I start with just an AI readiness audit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Many clients start with our AI Readiness Audit (from £2,500) — a low-risk entry point that gives you a clear picture of your AI opportunities before committing to a larger engagement."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is VAT included in the prices shown?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "All prices are exclusive of VAT. DSRVM Limited is VAT registered. A full breakdown is provided in every formal proposal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How quickly can DSRVM start an AI project?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Depending on scope, we typically begin within 1–2 weeks of contract signature. AI readiness audits can often start within days of initial contact."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is DSRVM's approach to AI strategy design?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We architect a tailored AI and digital roadmap — prioritising quick wins alongside long-term transformation with clear ROI projections. This includes an AI readiness audit, opportunity identification, vendor evaluation, and a 90-day quick-win plan."
-          }
-        }
       ]
     });
   }
