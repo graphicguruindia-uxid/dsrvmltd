@@ -270,95 +270,6 @@ color:#fff;
   line-height: 1.7;
 }
 
-/* ── Pricing ────────────────────────────────────────────────────────────────── */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.pricing-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: var(--radius-lg);
-  border: 2px solid rgba(10, 22, 40, 0.08);
-  transition: var(--transition);
-  position: relative;
-}
-
-.pricing-card.featured {
-  border-color: var(--color-accent);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
-  transform: scale(1.04);
-}
-
-.pricing-badge {
-  position: absolute;
-  top: -12px;
-  right: 2rem;
-  background: var(--color-accent);
-  color: white;
-  padding: 0.35rem 1.25rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.pricing-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-}
-
-.pricing-card.featured:hover {
-  transform: scale(1.04) translateY(-6px);
-}
-
-.pricing-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--color-navy);
-  margin-bottom: 0.75rem;
-}
-
-.pricing-price {
-  font-family: var(--font-display);
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 0.25rem;
-}
-
-.pricing-period {
-  color: var(--color-slate);
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-.pricing-features {
-  list-style: none;
-  margin-bottom: 2rem;
-}
-
-.pricing-features li {
-  padding: 0.65rem 0 0.65rem 1.75rem;
-  position: relative;
-  color: var(--color-slate);
-  font-size: 0.9rem;
-  border-bottom: 1px solid rgba(10, 22, 40, 0.05);
-}
-
-.pricing-features li:last-child {
-  border-bottom: none;
-}
-
-.pricing-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--color-sage);
-  font-weight: 700;
-}
-
 /* ── About ──────────────────────────────────────────────────────────────────── */
 .about-text {
   max-width: 860px;
@@ -404,11 +315,6 @@ color:#fff;
   }
 
   .services-grid  { grid-template-columns: 1fr; }
-  .pricing-grid   { grid-template-columns: 1fr; }
-
-  .pricing-card.featured {
-    transform: scale(1);
-  }
 }
 
 /* ── AI hero tag (pill above h1) ─────────────────────────────────────────── */

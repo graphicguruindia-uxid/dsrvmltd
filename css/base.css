@@ -746,24 +746,3 @@ padding:0;
   }
 }
 
-/* ── Nav: accommodate extra Pricing link ────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .nav-links { gap: 1.1rem; }
-  .nav-links a { font-size: 0.85rem; }
-}
-
-/* ── "New" label on nav items ───────────────────────────────────────────────── */
-.nav-new {
-  display: inline-block;
-  background: var(--color-accent);
-  color: white;
-  font-size: 0.55rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  padding: 0.1rem 0.35rem;
-  border-radius: 3px;
-  vertical-align: super;
-  margin-left: 2px;
-  line-height: 1;
-}

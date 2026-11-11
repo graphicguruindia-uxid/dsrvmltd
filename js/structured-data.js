@@ -6,7 +6,6 @@
  * Schemas injected:
  *   - Organization (all pages, enhanced)
  *   - WebSite + SearchAction (all pages)
- *   - FAQPage (pricing.html)
  *   - Service (services.html)
  *   - BreadcrumbList (all inner pages)
  *   - Person (team.html)
