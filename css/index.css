@@ -9,8 +9,7 @@
   margin-top: var(--nav-height);
   padding: 6rem 2rem;
   background:
-    linear-gradient(135deg, var(--color-cream) 0%, #FFE8D6 100%),
-    url('/images/hero-bg.png') center center / cover no-repeat;
+    transparent url('/images/hero-bg.png') center center / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
