@@ -9,7 +9,7 @@
   margin-top: var(--nav-height);
   padding: 6rem 2rem;
   background:
-    transparent url('/images/hero-bg.png') center center / cover no-repeat;
+    transparent url('/images/hero-bg.png') 100% 0% / contain no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -390,6 +390,7 @@ color:#fff;
 }
 
 @media (max-width: 768px) {
+.hero{background-position: 0 65%;}
   .hero-content h1 { font-size: 2.5rem; }
   .hero-stats      { flex-direction: column; gap: 1.5rem; }
   .hero-cta        { flex-direction: column; }
