@@ -12,6 +12,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      # S-17 deferred: actions pinned to moving tags (v4) rather than commit SHAs.
+      # Rationale: pinning SHAs adds maintenance overhead for this small static site;
+      # revisit if supply-chain hardening becomes a priority.
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

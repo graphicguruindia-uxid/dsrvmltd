@@ -1,9 +1,11 @@
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.statcounter.com https://c.statcounter.com 'sha256-zfkgYliSKZAeUs9VrNuN+ijCJe6hegVMGao2JKFTML0='; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://c.statcounter.com https://www.statcounter.com; connect-src 'self' https://api.emailjs.com https://www.statcounter.com https://c.statcounter.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.emailjs.com
 
 /css/*
   Cache-Control: public, max-age=86400
