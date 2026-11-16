@@ -178,6 +178,17 @@
     e.preventDefault();
     hideStatus();
 
+    // Honeypot anti-bot check: if filled, silently drop
+    var honeypot = f('website');
+    if (honeypot && honeypot.value.trim() !== '') {
+      showSuccess();
+      return;
+    }
+
+    // Rate limiting / CAPTCHA: EmailJS dashboard origin restrictions and
+    // EmailJS CAPTCHA (enable in dashboard) are the primary controls.
+    // Client-side: no additional CAPTCHA widget is wired; rely on honeypot + consent.
+
     // Run all validators
     let valid = true;
     Object.keys(RULES).forEach(name => {

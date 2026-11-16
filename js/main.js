@@ -107,7 +107,9 @@
   }
 
   function smoothScrollTo(hash) {
-    if (!hash) return false;
+    if (!hash || typeof hash !== 'string') return false;
+    // Validate the hash is a simple, safe id selector (no selector injection)
+    if (!/^#[A-Za-z_][\w-]*$/.test(hash)) return false;
     var target = document.querySelector(hash);
     if (!target) return false;
     var top = target.getBoundingClientRect().top + window.pageYOffset - getNavOffset() - 16;
@@ -295,16 +297,46 @@ mybutton.addEventListener("click", function() {
   window.declineCookies = function () {
     localStorage.setItem(COOKIE_KEY, 'declined');
     hideBanner();
+    // Honour decline: remove any already-loaded analytics
+    document.querySelectorAll('script[src*="statcounter.com"]').forEach(function (s) { if (s.parentNode) s.parentNode.removeChild(s); });
+    document.querySelectorAll('img.statcounter, .statcounter').forEach(function (el) { if (el.parentNode) el.parentNode.removeChild(el); });
   };
+
+  // Bind cookie banner buttons (CSP-friendly: no inline handlers)
+  document.querySelectorAll('.cookie-accept').forEach(function (btn) {
+    btn.addEventListener('click', window.acceptCookies);
+  });
+  document.querySelectorAll('.cookie-decline').forEach(function (btn) {
+    btn.addEventListener('click', window.declineCookies);
+  });
 
   window.resetCookieConsent = function () {
     localStorage.removeItem(COOKIE_KEY);
     location.reload();
   };
 
+  // S-19 deferred: no client-side error/abuse monitoring (console-only) - acceptable for static site.
+  // S-20 deferred: no skip link / cookie-banner focus management - accessibility via alt text + role=alert.
+  var analyticsLoaded = false;
   function initAnalytics() {
-    // Consent-gated analytics init (GA4, Statcounter etc.)
+    if (analyticsLoaded) return;
+    if (localStorage.getItem(COOKIE_KEY) !== 'accepted') return;
+    analyticsLoaded = true;
+    // Statcounter config (injected, not inline in HTML)
+    var cfg = document.createElement('script');
+    cfg.type = 'text/javascript';
+    cfg.textContent = 'var sc_project=13204602;var sc_invisible=1;var sc_security="3e97f699";';
+    document.head.appendChild(cfg);
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = 'https://www.statcounter.com/counter/counter.js';
+    s.async = true;
+    s.referrerPolicy = 'strict-origin-when-cross-origin';
+    document.body.appendChild(s);
   }
+
+  // Load analytics if previously consented
+  if (localStorage.getItem(COOKIE_KEY) === 'accepted') initAnalytics();
 
   showCookieBanner();
 

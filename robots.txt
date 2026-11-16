@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /js/
-Disallow: /css/
 Sitemap: https://www.dsrvmltd.co.uk/sitemap.xml
